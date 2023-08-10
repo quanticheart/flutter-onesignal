@@ -13,9 +13,9 @@ class _ScreenHomeState extends State<ScreenHome> {
   String _debugLabelString = "";
   bool _enableConsentButton = false;
 
-  String _emailAddress = "ded@gmail.com";
-  String _smsNumber = "+55132176";
-  String _externalUserId = "JYZ";
+  String _emailAddress = "dev.jonny255d@gmail.com";
+  String _smsNumber = "+551942032176";
+  String _externalUserId = "JONNYZ";
   String _language = "pt_BR";
 
   @override
@@ -59,15 +59,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                     });
                   }, !_enableConsentButton)
                 ]),
-                TableRow(children: [
-                  OneSignalButton("Get Tags", () {
-                    OneSignalNotification.getTags((tags) {
-                      setState((() {
-                        _debugLabelString = "$tags";
-                      }));
-                    });
-                  }, _enableConsentButton)
-                ]),
+
                 TableRow(children: [
                   OneSignalButton("Send Tags", () {
                     OneSignalNotification.sendTags({'test': 'value'});
@@ -76,11 +68,6 @@ class _ScreenHomeState extends State<ScreenHome> {
                 TableRow(children: [
                   OneSignalButton("Prompt for Push Permission", () {
                     OneSignalNotification.handlePromptForPushPermission;
-                  }, _enableConsentButton)
-                ]),
-                TableRow(children: [
-                  OneSignalButton("Print Device State", () {
-                    OneSignalNotification.getDeviceState();
                   }, _enableConsentButton)
                 ]),
                 TableRow(children: [
@@ -109,11 +96,6 @@ class _ScreenHomeState extends State<ScreenHome> {
                   }, _enableConsentButton)
                 ]),
                 TableRow(children: [
-                  OneSignalButton("Logout Email", () {
-                    OneSignalNotification.removeEmail();
-                  }, _enableConsentButton)
-                ]),
-                TableRow(children: [
                   TextField(
                     textAlign: TextAlign.center,
                     decoration: const InputDecoration(
@@ -139,11 +121,6 @@ class _ScreenHomeState extends State<ScreenHome> {
                   }, _enableConsentButton)
                 ]),
                 TableRow(children: [
-                  OneSignalButton("Logout SMS Number", () {
-                    OneSignalNotification.removeSMSNumber();
-                  }, _enableConsentButton)
-                ]),
-                TableRow(children: [
                   OneSignalButton("Set Location Shared", () {
                     OneSignalNotification.consentLocationShared();
                   }, _enableConsentButton),
@@ -161,16 +138,6 @@ class _ScreenHomeState extends State<ScreenHome> {
                 TableRow(children: [
                   OneSignalButton("Delete Tag", () {
                     OneSignalNotification.deleteTag("test2");
-                  }, _enableConsentButton)
-                ]),
-                TableRow(children: [
-                  OneSignalButton("Test Notification", () {
-                    OneSignalNotification.debugTestNotification();
-                  }, _enableConsentButton)
-                ]),
-                TableRow(children: [
-                  OneSignalButton("Post Silent Notification", () {
-                    OneSignalNotification.debugTestSilentNotification();
                   }, _enableConsentButton)
                 ]),
                 TableRow(children: [

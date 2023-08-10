@@ -8,7 +8,7 @@
 
         <!-- name doesn't change, value = your class fully name spaced-->
         <meta-data android:name="com.onesignal.NotificationServiceExtension"
-                   android:value="com.example.one_signal_test.XNotificationServiceExtension" />
+                   android:value="com.example.one_signal_test.NotificationServiceExtension" />
 
         <activity
             android:name=".MainActivity"
